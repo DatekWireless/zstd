@@ -142,7 +142,7 @@ static void deallocate(void *ds) {
     ZSTD_freeDCtx(((struct dic_struct *)ds)->dctx);
     ZSTD_freeDDict(((struct dic_struct *)ds)->ddic);
   }
-  //xfree(ds); // TODO: verify
+  xfree(ds);
 }
 
 static VALUE allocate(VALUE claes) {
